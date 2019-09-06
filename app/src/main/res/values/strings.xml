@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DocScannerAndroidJava</string>
+
+    <string name="easy_doc_scanner">Easy Document Scanner</string>
+    <string name="scan_your_doc">Scan Your Document</string>
+    <string name="your_file">Your Scanned Document is ready</string>
+</resources>

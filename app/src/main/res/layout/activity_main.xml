@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1089BB"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/easy_doc_scanner"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textStyle="bold"/>
+
+
+    <Button
+        android:id="@+id/btnScanYourDoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/scan_your_doc"
+        android:textAllCaps="false"
+        android:background="@drawable/button_bg"
+        android:layout_margin="@dimen/_40sdp"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>
