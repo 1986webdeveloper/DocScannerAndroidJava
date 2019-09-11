@@ -24,7 +24,8 @@ This example is about detecting the borders of any document and then capturing t
 
 4. Add mehod in button click to start scanning any document
 
-    ```protected void startScan(int preference) {
+    ```java
+    protected void startScan(int preference) {
         Intent intent = new Intent(MainActivity.this, ScanActivity.class);
         intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
         startActivityForResult(intent, REQUEST_CODE);
