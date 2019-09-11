@@ -16,7 +16,7 @@ This example is about detecting the borders of any document and then capturing t
 
 2. Import below code to your build.gradle(Module: app) file
 
-```implementation project(':scanlibrary')```
+    ```implementation project(':scanlibrary')```
 
 3. Change below code to your settings.gradle file
 include ':app',':scanlibrary'
