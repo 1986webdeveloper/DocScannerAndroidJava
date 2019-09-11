@@ -19,4 +19,4 @@ This example is about detecting the borders of any document and then capturing t
     ```implementation project(':scanlibrary')```
 
 3. Change below code to your settings.gradle file
-include ':app',':scanlibrary'
+    ```include ':app',':scanlibrary'```
