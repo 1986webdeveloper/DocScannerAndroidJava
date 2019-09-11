@@ -4,7 +4,7 @@ This example is about detecting the borders of any document and then capturing t
 <b>Features : </b>
 
 - Scanning of documents.
-- Editing scaned image with crop and filter option.
+- Editing scanned image with crop and filter option.
 - Save scanned image to your album.
 - Lightweight dependency.
 
@@ -22,7 +22,7 @@ This example is about detecting the borders of any document and then capturing t
 
     ```include ':app',':scanlibrary'```
 
-4. Add mehod in button click to start scanning any document
+4. Add method in button click to start scanning any document
 
     ```java
     protected void startScan(int preference) {
