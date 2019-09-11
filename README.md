@@ -22,7 +22,7 @@ This example is about detecting the borders of any document and then capturing t
 
     ```include ':app',':scanlibrary'```
 
-4. Add mehod in button click to start scanning any document :
+4. Add mehod in button click to start scanning any document
 
     ```java
     protected void startScan(int preference) {
@@ -31,16 +31,10 @@ This example is about detecting the borders of any document and then capturing t
         startActivityForResult(intent, REQUEST_CODE);
     }
     
- 5. Change onActivityResult method with below code :
+ 5. Add below code in onActivityResult method to get generated scanned file.
  
  ```java
- @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-
-
+ 
             case REQUEST_CODE:
 
                 Uri uri = null;
@@ -51,7 +45,6 @@ This example is about detecting the borders of any document and then capturing t
 
                     Bitmap bitmap = null;
                     try {
-
                         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                         String imageFileName = "JPEG_" + timeStamp + "_";
                         File storageDir = Environment.getExternalStoragePublicDirectory(
@@ -90,6 +83,7 @@ This example is about detecting the borders of any document and then capturing t
 
 
                 break;
-        }
-    }
+       
+    ```
+
 
