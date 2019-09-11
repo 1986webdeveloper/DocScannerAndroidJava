@@ -3,7 +3,7 @@ This example is about detecting the borders of any document and then capturing t
 
 Features
 
-⁃	Scanning of documents.
-⁃	Editing scaned image with crop and filter option
-⁃	Save scanned image to your album.
+⁃	Scanning of documents.\n
+⁃	Editing scaned image with crop and filter option\n
+⁃	Save scanned image to your album.\n
 ⁃	Lightweight dependency.
