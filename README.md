@@ -33,11 +33,10 @@ This example is about detecting the borders of any document and then capturing t
     
  5. Add below code in onActivityResult method to get generated scanned file.
  
- ```java
- 
-            case REQUEST_CODE:
+    ```java
+    case REQUEST_CODE:
 
-                Uri uri = null;
+        Uri uri = null;
 
                 if (data != null) {
 
