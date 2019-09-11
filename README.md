@@ -10,3 +10,12 @@ This example is about detecting the borders of any document and then capturing t
 
 <b>Requirements :</b>
 - Android Studio
+
+<b>Usage :</b>
+1. Clone or download <b>scanlibrary</b> and import it to your project
+
+2. Import below code to your build.gradle(Module: app) file
+implementation project(':scanlibrary')
+
+3. Change below code to your settings.gradle file
+include ':app',':scanlibrary'
