@@ -22,7 +22,7 @@ This example is about detecting the borders of any document and then capturing t
 
     ```include ':app',':scanlibrary'```
 
-4. Add mehod in button click to start scanning any document
+4. Add mehod in button click to start scanning any document :
 
     ```java
     protected void startScan(int preference) {
@@ -31,5 +31,65 @@ This example is about detecting the borders of any document and then capturing t
         startActivityForResult(intent, REQUEST_CODE);
     }
     
- 5. 
+ 5. Change onActivityResult method with below code :
+ 
+ ```java
+ @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+
+
+            case REQUEST_CODE:
+
+                Uri uri = null;
+
+                if (data != null) {
+
+                    uri = data.getExtras().getParcelable(ScanConstants.SCANNED_RESULT);
+
+                    Bitmap bitmap = null;
+                    try {
+
+                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                        String imageFileName = "JPEG_" + timeStamp + "_";
+                        File storageDir = Environment.getExternalStoragePublicDirectory(
+                                Environment.DIRECTORY_PICTURES);
+                        File image = File.createTempFile(
+                                imageFileName,  /* prefix */
+                                ".jpg",         /* suffix */
+                                storageDir      /* directory */
+                        );
+
+
+                        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                        bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                        getContentResolver().delete(uri, null, null);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+                        byte[] bitmapdata = bos.toByteArray();
+
+
+                        FileOutputStream fos = new FileOutputStream(image);
+                        fos.write(bitmapdata);
+                        fos.flush();
+                        fos.close();
+
+                        Log.e("file1", image.toString());
+
+                        Intent intent = new Intent(MainActivity.this,YourDestinationActivity.class);
+                        intent.putExtra("img",bitmapdata);
+                        intent.putExtra("path",image.toString());
+                        startActivity(intent);
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+                break;
+        }
+    }
 
